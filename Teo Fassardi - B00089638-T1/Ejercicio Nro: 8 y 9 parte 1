@@ -1,0 +1,117 @@
+#Ejercicio Nro: 8
+##Enunciado
+
+Práctica 1
+
+Ejercicios sobre Metodologías de Desarrollo en Cascada
+
+1. Análisis de Requerimientos:
+Ejercicio 1: Un cliente te solicita una aplicación web para gestionar su inventario. Define los requisitos funcionales y no funcionales del sistema.
+Ejercicio 2: Redacta un caso de uso para la funcionalidad de "Agregar un nuevo producto" en la aplicación web del ejercicio 1.
+2. Diseño del Sistema:
+Ejercicio 3: Elabora un diagrama de flujo de datos para la aplicación web del ejercicio 1.
+Ejercicio 4: Diseña la interfaz de usuario para la pantalla de "Inicio" de la aplicación web del ejercicio 1.
+3. Diseño del Programa:
+Ejercicio 5: Elige una arquitectura adecuada para la aplicación web del ejercicio 1 y justifica tu elección.
+Ejercicio 6: Diseña la base de datos para la aplicación web del ejercicio 1.
+
+
+4. Diseño:
+Utilizando los siguientes diagrama resuelva los casos de usos de los  ejercicios 7 y 8: 
+
+
+Diagrama de Dominio: Identifica las entidades, atributos y relaciones del sistema.
+Diagrama de Robustez: Analiza cómo el sistema responde a diferentes escenarios de uso.
+Prototipo: Crea una versión simplificada del sistema para probar la usabilidad y funcionalidad.
+Diagrama de Secuencia: Describe la interacción entre los diferentes objetos del sistema.
+Diagrama de Clases: Define las clases, sus atributos, métodos y relaciones
+
+
+
+	
+Ejercicio 7: Implementa la funcionalidad de "Agregar un nuevo producto" en la aplicación web del ejercicio 1 utilizando el lenguaje de programación de tu preferencia.
+Ejercicio 8: Implementa la lógica de negocio para la funcionalidad de "Agregar un nuevo producto" en la aplicación web del ejercicio 1.
+5. Pruebas:
+Ejercicio 9: Define un conjunto de pruebas unitarias para la funcionalidad de "Agregar un nuevo producto" en la aplicación web del ejercicio 1.
+Ejercicio 10: Ejecuta pruebas de integración para la funcionalidad de "Agregar un nuevo producto" en la aplicación web del ejercicio 1.
+6. Despliegue del Programa:
+Ejercicio 11: Definir un plan de despliegue para la aplicación web del ejercicio 1.
+Ejercicio 12: Despliega la aplicación web del ejercicio 1 en un servidor de producción.
+7. Mantenimiento:
+Ejercicio 13: Definir un plan de mantenimiento para la aplicación web del ejercicio 1.
+Ejercicio 14: Implementa una corrección de errores para un problema detectado en la aplicación web del ejercicio 1.
+
+
+8. Nos preparamos para nuevos retos
+
+
+Ejercicio 15: Arme un equipo de trabajo y defina los roles para realizar los ejercicios anteriores para un futuro dominio de aplicación relacionado con inteligencia artificial generatica. 
+
+##Resolución
+1. 
+1) 
+Requisitos funcionales: 
+
+1-	Registrar productos nuevos en el inventario, indicando datos como nombre, código, categoría, precio, cantidad disponible y descripción.
+2-	Modificar la información de los productos existentes, por ejemplo, cambiar el precio, actualizar la cantidad disponible o corregir datos cargados previamente. 
+3-	Eliminar productos del inventario cuando ya no se vendan o no formen parte del stock de la empresa. 
+4-	Consultar el listado de productos disponibles, mostrando información como nombre, código, categoría, precio y stock actual. 
+5-	Buscar productos mediante filtros, como nombre, código, categoría o disponibilidad. 
+6-	Controlar el stock de cada producto, permitiendo saber cuántas unidades hay disponibles. 
+7-	Registrar entradas de mercadería, es decir, aumentar el stock cuando ingresan nuevos productos al inventario. 
+8-	Registrar salidas de mercadería, descontando unidades cuando se realiza una venta, entrega o retiro de productos. 
+9-	Generar alertas de bajo stock cuando la cantidad disponible de un producto sea menor al mínimo establecido. 
+10-	Permitir el acceso de usuarios autorizados, mediante inicio de sesión con usuario y contraseña. 
+11-	Generar reportes básicos del inventario, como productos con bajo stock, productos disponibles y movimientos de entrada y salida.
+
+Requisitos no funcionales: 
+
+1-	Seguridad: el sistema debe proteger la información del inventario y permitir el acceso solo a usuarios autorizados. 
+2-	Usabilidad: la aplicación debe ser clara, sencilla e intuitiva, para que los usuarios puedan utilizarla sin dificultad. 
+3-	Rendimiento: el sistema debe responder de manera rápida al consultar, cargar, modificar o eliminar productos. 
+4-	Disponibilidad: la aplicación debe estar disponible la mayor parte del tiempo para que el cliente pueda gestionar el inventario cuando lo necesite. 
+5-	Escalabilidad: el sistema debe permitir agregar más productos, usuarios o funcionalidades en el futuro sin afectar su funcionamiento. 
+6-	Compatibilidad: la aplicación debe poder utilizarse desde distintos navegadores web, como Chrome, Edge o Firefox. 
+7-	Mantenibilidad: el sistema debe estar desarrollado de manera ordenada para facilitar futuras correcciones, mejoras o actualizaciones. 
+8-	Integridad de datos: la información cargada debe mantenerse correcta y coherente, evitando errores como cantidades negativas o productos duplicados.
+2)
+
+Caso de uso: Agregar un nuevo producto
+Nombre del caso de uso:
+Agregar un nuevo producto.
+Actor principal:
+Usuario encargado del inventario.
+Objetivo:
+Permitir que el usuario registre un nuevo producto dentro del sistema de inventario.
+Descripción:
+El usuario ingresa al sistema, accede a la sección de productos y selecciona la opción para agregar un nuevo producto. Luego completa los datos solicitados por el sistema, como nombre, código, categoría, precio, cantidad disponible y descripción. Finalmente, el sistema valida la información ingresada y guarda el nuevo producto en el inventario.
+Precondiciones:
+El usuario debe haber iniciado sesión en el sistema.
+El usuario debe tener permisos para administrar productos.
+Flujo principal:
+1.	El usuario ingresa al sistema con su usuario y contraseña. 
+2.	El sistema muestra el menú principal. 
+3.	El usuario selecciona la opción “Productos”. 
+4.	El sistema muestra el listado de productos existentes. 
+5.	El usuario selecciona la opción “Agregar nuevo producto”. 
+6.	El sistema muestra un formulario de carga. 
+7.	El usuario completa los datos del producto: nombre, código, categoría, precio, stock inicial y descripción. 
+8.	El usuario confirma la carga del producto. 
+9.	El sistema valida que los datos ingresados sean correctos. 
+10.	El sistema guarda el nuevo producto en el inventario. 
+11.	El sistema muestra un mensaje de confirmación indicando que el producto fue agregado correctamente. 
+Flujos alternativos:
+A1: Datos incompletos
+Si el usuario deja campos obligatorios vacíos, el sistema muestra un mensaje de error indicando que debe completar todos los datos requeridos.
+A2: Código de producto duplicado
+Si el código ingresado ya pertenece a otro producto, el sistema informa que el producto ya existe y solicita ingresar un código diferente.
+A3: Datos inválidos
+Si el usuario ingresa un precio o una cantidad de stock con valores negativos, el sistema muestra un mensaje de error y solicita corregir los datos.
+Postcondiciones:
+El producto queda registrado en el sistema.
+El inventario se actualiza con el nuevo producto cargado.
+El usuario puede consultar, modificar o eliminar el producto posteriormente.
+Resultado esperado:
+El sistema permite agregar correctamente un nuevo producto al inventario, siempre que los datos ingresados sean válidos y no exista otro producto con el mismo código.
+
+
