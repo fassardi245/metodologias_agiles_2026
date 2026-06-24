@@ -1,161 +1,350 @@
-## Ejercicio Nro: 13
-# Enunciado
-Tu tarea es desarrollar una aplicación informática utilizando la técnica TDD para gestionar una cuenta bancaria. La aplicación debe permitir a los usuarios abrir una cuenta, realizar depósitos, hacer retiros y transferir fondos entre cuentas. A continuación se detallan las etapas de desarrollo utilizando TDD:
+# Ejercicio N.º 13
 
-Etapa 1: Especificación y prueba inicial
+## Enunciado
 
-Especifica los requisitos básicos del sistema y las funcionalidades clave, como la apertura de cuenta, depósito de fondos, retiro de fondos y transferencia de fondos.
-Escribe una prueba inicial que verifique si el sistema puede crear una instancia de una cuenta bancaria y obtener su saldo inicial.
-Etapa 2: Desarrollo de las funcionalidades básicas
+Desarrollar una aplicación informática utilizando la técnica TDD para gestionar una cuenta bancaria. La aplicación debe permitir abrir una cuenta, realizar depósitos, hacer retiros y transferir fondos entre cuentas.
 
-Implementa la funcionalidad para abrir una cuenta bancaria, asegurándote de que se cumplan los requisitos especificados. Ejecuta la prueba y verifica que pase correctamente.
-Implementa la funcionalidad para realizar depósitos en una cuenta bancaria. Ejecuta las pruebas y verifica que pasen correctamente.
-Implementa la funcionalidad para realizar retiros de una cuenta bancaria. Ejecuta las pruebas y verifica que pasen correctamente.
-Implementa la funcionalidad para transferir fondos entre cuentas bancarias. Ejecuta las pruebas y verifica que pasen correctamente.
-Etapa 3: Pruebas adicionales y mejoras
+### Etapa 1: Especificación y prueba inicial
 
-Escribe pruebas adicionales para cubrir casos de prueba específicos, como intentar retirar más dinero del disponible en una cuenta o transferir fondos a una cuenta inexistente.
-Ejecuta todas las pruebas y verifica que pasen correctamente.
-Refactoriza tu código si es necesario para mejorar su estructura, legibilidad y eficiencia.
-Ejecuta todas las pruebas nuevamente para asegurarte de que el código refactorizado no haya introducido errores.
-Etapa 4: Cobertura completa de pruebas
+- Especificar los requisitos básicos y las funcionalidades principales.
+- Escribir una prueba inicial que verifique la creación de una cuenta bancaria y su saldo inicial.
 
-Asegúrate de que todas las funcionalidades del sistema estén cubiertas por pruebas automatizadas.
-Examina los casos límite y situaciones excepcionales para garantizar que el sistema se comporte correctamente en todos los escenarios.
-Ejecuta todas las pruebas y verifica que pasen correctamente.
-Recuerda seguir el enfoque TDD, donde agregarás una prueba antes de implementar cada funcionalidad y verificarás que todas las pruebas pasen antes de pasar a la siguiente etapa. Esto te ayudará a desarrollar una aplicación confiable, mantenible y que cumpla con los requisitos establecidos.
+### Etapa 2: Desarrollo de las funcionalidades básicas
+
+- Implementar la apertura de una cuenta bancaria.
+- Implementar depósitos.
+- Implementar retiros.
+- Implementar transferencias entre cuentas.
+- Ejecutar las pruebas después de cada implementación.
+
+### Etapa 3: Pruebas adicionales y mejoras
+
+- Agregar pruebas para casos específicos, como retirar más dinero del disponible o transferir a una cuenta inexistente.
+- Ejecutar todas las pruebas.
+- Refactorizar el código para mejorar su estructura y legibilidad.
+- Ejecutar nuevamente las pruebas.
+
+### Etapa 4: Cobertura completa de pruebas
+
+- Cubrir todas las funcionalidades mediante pruebas automatizadas.
+- Examinar casos límite y situaciones excepcionales.
+- Ejecutar todas las pruebas y verificar que sean aprobadas.
+
+El trabajo debe seguir el enfoque TDD: escribir una prueba antes de implementar cada funcionalidad y comprobar que todas las pruebas pasen antes de continuar.
 
 # Resolución
 
-1. Especificación de los requisitos básicos del sistema
-El sistema a desarrollar corresponde a una aplicación bancaria simple. Su objetivo es permitir la gestión básica de cuentas bancarias mediante operaciones comunes.
-Las funcionalidades principales son:
-•	crear o abrir una cuenta bancaria; 
-•	consultar el saldo disponible; 
-•	realizar depósitos; 
-•	realizar retiros; 
-•	transferir fondos entre cuentas; 
-•	validar operaciones incorrectas. 
-Cada cuenta bancaria debe contar con un titular, un número identificador de cuenta y un saldo. Además, el sistema debe controlar que las operaciones respeten reglas básicas, por ejemplo que no se depositen montos negativos, que no se retire más dinero del disponible y que no se transfiera dinero a cuentas inexistentes.
+## Etapa 1: Especificación y prueba inicial
 
-2. Prueba inicial para crear una cuenta y consultar saldo
-Siguiendo el enfoque TDD, antes de implementar la funcionalidad se plantea una primera prueba.
-La primera prueba consiste en verificar que el sistema pueda crear una cuenta bancaria nueva y consultar correctamente su saldo inicial.
-Por ejemplo, si se abre una cuenta con saldo inicial igual a cero, el resultado esperado es que el sistema permita crear la cuenta y que al consultar el saldo devuelva cero.
-Esta prueba es importante porque permite comprobar que existe una estructura básica de cuenta bancaria antes de avanzar con operaciones más complejas.
-Resultado esperado:
-la cuenta se crea correctamente y el saldo inicial coincide con el valor definido.
+### Requisitos básicos del sistema
 
-3. Implementación de la apertura de cuenta bancaria
-Luego de definir la prueba inicial, se implementa la funcionalidad mínima necesaria para abrir una cuenta bancaria.
-La cuenta debe crearse con datos básicos:
-•	titular; 
-•	número de cuenta; 
-•	saldo inicial. 
-También deben agregarse validaciones. Por ejemplo, el sistema no debería permitir crear una cuenta sin titular o con saldo inicial negativo.
-Después de implementar esta funcionalidad, se ejecuta la prueba planteada en la consigna anterior. Si la prueba pasa, significa que la apertura de cuenta funciona correctamente.
-Resultado esperado:
-el sistema permite abrir cuentas válidas y rechaza cuentas con datos incorrectos.
+El sistema corresponde a una aplicación bancaria simple. Su objetivo es permitir la gestión básica de cuentas bancarias mediante las siguientes operaciones:
 
-4. Implementación de depósitos en una cuenta bancaria
-La siguiente funcionalidad consiste en permitir que el usuario deposite dinero en una cuenta.
-Primero se plantea la prueba. Por ejemplo: una cuenta tiene saldo inicial de $0 y se realiza un depósito de $1000. El resultado esperado es que el saldo final sea $1000.
-Luego se implementa la operación de depósito.
-También se deben contemplar casos inválidos. El sistema no debería permitir depósitos con monto cero o con valores negativos, porque eso no representa una operación bancaria válida.
-Resultado esperado:
-el depósito aumenta correctamente el saldo de la cuenta y el sistema rechaza montos inválidos.
+- Crear o abrir una cuenta bancaria.
+- Consultar el saldo disponible.
+- Realizar depósitos.
+- Realizar retiros.
+- Transferir fondos entre cuentas.
+- Validar operaciones incorrectas.
 
-5. Implementación de retiros en una cuenta bancaria
-Después se desarrolla la funcionalidad de retiro de fondos.
-Primero se define una prueba. Por ejemplo: una cuenta tiene $1000 y se retiran $400. El saldo final debería ser $600.
-Luego se implementa la operación de retiro.
-El sistema debe validar que el monto a retirar sea mayor que cero y que la cuenta tenga saldo suficiente. Si el usuario intenta retirar más dinero del disponible, la operación debe ser rechazada.
-Resultado esperado:
-el retiro descuenta correctamente el dinero del saldo, siempre que haya fondos suficientes.
+Cada cuenta bancaria debe contar con un titular, un número identificador y un saldo.
 
-6. Implementación de transferencia entre cuentas bancarias
-La transferencia permite mover dinero desde una cuenta origen hacia una cuenta destino.
-Primero se plantea una prueba. Por ejemplo: una cuenta origen tiene $1000 y una cuenta destino tiene $200. Si se transfieren $300, la cuenta origen debe quedar con $700 y la cuenta destino con $500.
-Luego se implementa la funcionalidad de transferencia.
-Esta operación debe validar que la cuenta destino exista, que el monto sea válido y que la cuenta origen tenga saldo suficiente.
-Resultado esperado:
-el dinero se descuenta de la cuenta origen y se acredita en la cuenta destino correctamente.
+El sistema también debe impedir depósitos negativos, retiros superiores al saldo disponible y transferencias hacia cuentas inexistentes.
 
-7. Pruebas adicionales para casos específicos
-Una vez implementadas las operaciones principales, se agregan pruebas adicionales para verificar situaciones especiales o errores posibles.
-Algunos casos importantes son:
-•	intentar retirar más dinero del disponible; 
-•	intentar depositar un monto negativo; 
-•	intentar depositar monto cero; 
-•	intentar transferir más dinero del saldo disponible; 
-•	intentar transferir a una cuenta inexistente; 
-•	intentar crear una cuenta sin titular; 
-•	intentar crear una cuenta con saldo inicial negativo. 
-Estas pruebas permiten comprobar que el sistema no solo funciona en casos normales, sino también frente a situaciones incorrectas.
-Resultado esperado:
-el sistema debe rechazar las operaciones inválidas y conservar correctamente los saldos de las cuentas.
+### Prueba inicial para crear una cuenta y consultar su saldo — Ciclo RED
 
-8. Ejecución de todas las pruebas
-Después de agregar las pruebas principales y adicionales, se ejecuta el conjunto completo de pruebas.
-El objetivo es verificar que todas las funcionalidades implementadas funcionen correctamente y que ninguna modificación haya afectado operaciones anteriores.
-En TDD, no se debería avanzar a una nueva funcionalidad si las pruebas anteriores no pasan correctamente.
-Resultado esperado:
-todas las pruebas deben pasar antes de continuar con nuevas mejoras o cambios.
+Antes de implementar la funcionalidad, se escribe una prueba que verifica que el sistema pueda crear una cuenta bancaria y consultar su saldo inicial.
 
-9. Refactorización del código
-Cuando las pruebas ya pasan, se revisa el código para mejorar su estructura interna.
-La refactorización no busca agregar nuevas funcionalidades, sino mejorar la calidad del código existente.
-Algunas mejoras posibles son:
-•	mejorar nombres de variables y métodos; 
-•	evitar código repetido; 
-•	ordenar las validaciones; 
-•	separar responsabilidades; 
-•	simplificar operaciones; 
-•	hacer el código más claro y fácil de mantener. 
-Por ejemplo, la transferencia puede aprovechar las operaciones de retiro y depósito ya existentes, en lugar de repetir la lógica de descontar y sumar saldo.
-Resultado esperado:
-el código queda más claro y mantenible, pero el comportamiento del sistema sigue siendo el mismo.
+La prueba fallará inicialmente porque la clase todavía no existe.
 
-10. Nueva ejecución de pruebas después de refactorizar
-Luego de refactorizar, se deben ejecutar nuevamente todas las pruebas.
-Esto es fundamental porque permite comprobar que las mejoras internas no hayan introducido errores.
-Si todas las pruebas siguen pasando, significa que el código fue mejorado sin modificar el comportamiento esperado del sistema.
-Resultado esperado:
-todas las pruebas deben pasar igual que antes de la refactorización.
+```javascript
+// cuentaBancaria.test.js
 
-11. Cobertura de todas las funcionalidades con pruebas automatizadas
-En esta etapa se revisa que cada funcionalidad importante del sistema tenga al menos una prueba automatizada.
-Deben estar cubiertas las siguientes operaciones:
-•	apertura de cuenta; 
-•	consulta de saldo; 
-•	depósito de fondos; 
-•	retiro de fondos; 
-•	transferencia entre cuentas; 
-•	validación de errores; 
-•	casos límite. 
-Esto permite tener mayor seguridad ante cambios futuros. Si más adelante se modifica alguna parte del sistema, las pruebas ayudarán a detectar rápidamente si algo dejó de funcionar.
-Resultado esperado:
-todas las funcionalidades principales quedan respaldadas por pruebas.
+const { CuentaBancaria } = require("./cuentaBancaria");
 
-12. Revisión de casos límite y situaciones excepcionales
-Además de probar los casos normales, también deben revisarse los casos límite.
-Algunos ejemplos son:
-•	saldo inicial igual a cero; 
-•	saldo inicial negativo; 
-•	depósito de monto cero; 
-•	retiro de monto cero; 
-•	transferencia de monto cero; 
-•	retiro sin fondos suficientes; 
-•	transferencia hacia una cuenta inexistente; 
-•	cuenta sin titular; 
-•	cuenta sin número identificador. 
-Estos casos son importantes porque muchas fallas aparecen justamente en situaciones no habituales.
-Resultado esperado:
-el sistema debe comportarse correctamente tanto en operaciones normales como en casos excepcionales.
+describe("Etapa 1: Creación de cuenta", () => {
+  test("Debería crear una cuenta con titular, número y saldo inicial en 0", () => {
+    const cuenta = new CuentaBancaria("Juan Pérez", "123456");
 
-13. Ejecución final de todas las pruebas
-Por último, se ejecutan nuevamente todas las pruebas del sistema.
-Esta ejecución final permite comprobar que la aplicación cumple con los requisitos definidos y que las operaciones bancarias funcionan correctamente.
-Si todas las pruebas pasan, se puede considerar que el sistema está en una versión estable.
-Resultado esperado:
-la aplicación permite abrir cuentas, consultar saldos, depositar, retirar y transferir fondos, validando correctamente las operaciones inválidas.
+    expect(cuenta.getTitular()).toBe("Juan Pérez");
+    expect(cuenta.getNumeroCuenta()).toBe("123456");
+    expect(cuenta.getSaldo()).toBe(0);
+  });
+});
+```
+
+## Etapa 2: Desarrollo de las funcionalidades básicas
+
+### Apertura de una cuenta bancaria — Ciclo GREEN
+
+Se implementa la funcionalidad mínima necesaria para abrir una cuenta con titular, número identificador y saldo inicial igual a cero.
+
+```javascript
+// cuentaBancaria.js
+
+class CuentaBancaria {
+  constructor(titular, numeroCuenta) {
+    if (!titular || !numeroCuenta) {
+      throw new Error("Datos obligatorios faltantes");
+    }
+
+    this.titular = titular;
+    this.numeroCuenta = numeroCuenta;
+    this.saldo = 0;
+  }
+
+  getTitular() {
+    return this.titular;
+  }
+
+  getNumeroCuenta() {
+    return this.numeroCuenta;
+  }
+
+  getSaldo() {
+    return this.saldo;
+  }
+}
+
+module.exports = { CuentaBancaria };
+```
+
+Después de implementar esta funcionalidad, se ejecuta la prueba inicial para comprobar que sea aprobada.
+
+### Implementación de depósitos
+
+Primero se escribe una prueba para comprobar que un depósito válido incremente el saldo.
+
+```javascript
+test("Debería incrementar el saldo al realizar un depósito válido", () => {
+  const cuenta = new CuentaBancaria("Juan Pérez", "123456");
+
+  cuenta.depositar(1000);
+
+  expect(cuenta.getSaldo()).toBe(1000);
+});
+```
+
+Luego se implementa el método correspondiente:
+
+```javascript
+depositar(monto) {
+  if (monto <= 0) {
+    throw new Error("El monto a depositar debe ser mayor a cero");
+  }
+
+  this.saldo += monto;
+}
+```
+
+### Implementación de retiros
+
+Primero se define una prueba en la que una cuenta tiene `$1000` y se retiran `$400`. El saldo final debe ser de `$600`.
+
+```javascript
+test("Debería disminuir el saldo al realizar un retiro válido", () => {
+  const cuenta = new CuentaBancaria("Juan Pérez", "123456");
+
+  cuenta.depositar(1000);
+  cuenta.retirar(400);
+
+  expect(cuenta.getSaldo()).toBe(600);
+});
+```
+
+Luego se implementa la operación:
+
+```javascript
+retirar(monto) {
+  if (monto <= 0) {
+    throw new Error("El monto a retirar debe ser mayor a cero");
+  }
+
+  if (monto > this.saldo) {
+    throw new Error("Fondos insuficientes");
+  }
+
+  this.saldo -= monto;
+}
+```
+
+### Implementación de transferencias
+
+La transferencia permite mover dinero desde una cuenta de origen hacia una cuenta de destino.
+
+Primero se escribe la prueba correspondiente:
+
+```javascript
+test("Debería transferir fondos correctamente entre dos cuentas", () => {
+  const cuentaOrigen = new CuentaBancaria("Juan Pérez", "123456");
+  const cuentaDestino = new CuentaBancaria("María López", "789101");
+
+  cuentaOrigen.depositar(1000);
+  cuentaOrigen.transferir(300, cuentaDestino);
+
+  expect(cuentaOrigen.getSaldo()).toBe(700);
+  expect(cuentaDestino.getSaldo()).toBe(300);
+});
+```
+
+Luego se implementa la lógica básica:
+
+```javascript
+transferir(monto, cuentaDestino) {
+  if (!cuentaDestino) {
+    throw new Error("La cuenta destino no existe");
+  }
+
+  if (monto > this.saldo) {
+    throw new Error("Fondos insuficientes para transferir");
+  }
+
+  this.saldo -= monto;
+  cuentaDestino.saldo += monto;
+}
+```
+
+## Etapa 3: Pruebas adicionales y mejoras
+
+### Pruebas para casos específicos
+
+Se agregan pruebas para verificar el comportamiento del sistema ante errores o entradas inválidas.
+
+```javascript
+describe("Etapa 3: Casos de error y límites", () => {
+  let cuenta;
+
+  beforeEach(() => {
+    cuenta = new CuentaBancaria("Juan Pérez", "123456");
+  });
+
+  test("No debería permitir retirar más dinero del disponible", () => {
+    cuenta.depositar(100);
+
+    expect(() => cuenta.retirar(150)).toThrow(
+      "Fondos insuficientes"
+    );
+  });
+
+  test("No debería permitir depósitos negativos o iguales a cero", () => {
+    expect(() => cuenta.depositar(-50)).toThrow(
+      "El monto a depositar debe ser mayor a cero"
+    );
+
+    expect(() => cuenta.depositar(0)).toThrow(
+      "El monto a depositar debe ser mayor a cero"
+    );
+  });
+
+  test("No debería permitir transferencias a cuentas inexistentes", () => {
+    cuenta.depositar(500);
+
+    expect(() => cuenta.transferir(200, null)).toThrow(
+      "La cuenta destino no existe"
+    );
+  });
+});
+```
+
+### Ejecución de todas las pruebas
+
+Se ejecuta la suite completa para comprobar que las pruebas iniciales y adicionales sean aprobadas antes de modificar la estructura del código.
+
+### Refactorización del código — Ciclo REFACTOR
+
+Con las pruebas aprobadas, se mejora el método `transferir` para reutilizar los métodos `retirar` y `depositar`. De esta manera se evita duplicar la lógica de negocio.
+
+```javascript
+// cuentaBancaria.js
+
+class CuentaBancaria {
+  constructor(titular, numeroCuenta) {
+    if (!titular || !numeroCuenta) {
+      throw new Error("Datos obligatorios faltantes");
+    }
+
+    this.titular = titular;
+    this.numeroCuenta = numeroCuenta;
+    this.saldo = 0;
+  }
+
+  getTitular() {
+    return this.titular;
+  }
+
+  getNumeroCuenta() {
+    return this.numeroCuenta;
+  }
+
+  getSaldo() {
+    return this.saldo;
+  }
+
+  depositar(monto) {
+    if (monto <= 0) {
+      throw new Error("El monto a depositar debe ser mayor a cero");
+    }
+
+    this.saldo += monto;
+  }
+
+  retirar(monto) {
+    if (monto <= 0) {
+      throw new Error("El monto a retirar debe ser mayor a cero");
+    }
+
+    if (monto > this.saldo) {
+      throw new Error("Fondos insuficientes");
+    }
+
+    this.saldo -= monto;
+  }
+
+  transferir(monto, cuentaDestino) {
+    if (!cuentaDestino) {
+      throw new Error("La cuenta destino no existe");
+    }
+
+    this.retirar(monto);
+    cuentaDestino.depositar(monto);
+  }
+}
+
+module.exports = { CuentaBancaria };
+```
+
+### Nueva ejecución después de refactorizar
+
+Se ejecuta nuevamente toda la suite de pruebas para confirmar que la refactorización no haya introducido errores ni modificado el comportamiento del sistema.
+
+## Etapa 4: Cobertura completa de pruebas
+
+### Cobertura de las funcionalidades
+
+Se verifica que las siguientes funcionalidades estén cubiertas por pruebas automatizadas:
+
+- Apertura de una cuenta.
+- Consulta del saldo.
+- Depósitos.
+- Retiros.
+- Transferencias.
+- Validación de fondos insuficientes.
+- Validación de montos incorrectos.
+- Validación de cuentas inexistentes.
+
+### Casos límite y situaciones excepcionales
+
+También se analiza el comportamiento del sistema ante situaciones como:
+
+- Crear una cuenta sin titular.
+- Crear una cuenta sin número identificador.
+- Retirar todo el saldo disponible.
+- Transferir todo el saldo disponible.
+- Realizar operaciones con montos iguales a cero.
+- Realizar operaciones con montos negativos.
+
+### Ejecución final
+
+Como cierre del proceso TDD, se ejecuta por última vez la suite completa de pruebas automatizadas.
+
+Al aprobarse todas las pruebas, se confirma que la aplicación cumple con los requisitos definidos y que la refactorización no introdujo errores.
